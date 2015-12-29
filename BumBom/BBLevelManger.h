@@ -31,10 +31,14 @@ typedef enum {
 
 + (instancetype) levelMangerWithActionStart:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) actionStart
                                   endAction:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) actionEnd
-                                  nextLevel:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) nextLevelAction;
+                                  nextLevel:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) nextLevelAction
+                                numberOfTap:(NSInteger) numberOfTap;
 
 
 @property (nonatomic,weak) id<BBLevelMangerDelegate> delegate;
+@property (nonatomic,assign) NSInteger numberOfTap;
+@property (nonatomic,assign) NSInteger currentTap;
+@property (nonatomic,assign) NSInteger numberOfPoints;
 
 - (void) startLevel:(BBBombManager*) bomManager;
 - (BOOL) nextLevel:(BBBombManager*) bomManager;

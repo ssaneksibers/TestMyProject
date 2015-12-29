@@ -7,6 +7,7 @@
 //
 
 #import "BBLevelManger.h"
+#import "BBBombManager.h"
 
 @interface BBLevelManger ()
 
@@ -22,18 +23,30 @@
     static NSArray* list;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        list = @[];
+        list = @[[BBLevelManger levelMangerWithActionStart:^BOOL(BBBombManager *bomb, id<BBLevelMangerDelegate> delegate) {
+            [bomb reloadWithNumberBombs:40];
+            return YES;
+        }
+                                                 endAction:^BOOL(BBBombManager *bomb, id<BBLevelMangerDelegate> delegate) {
+                                                     return NO;
+                                                 }
+                                                 nextLevel:^BOOL(BBBombManager *bomb, id<BBLevelMangerDelegate> delegate) {
+                                                     return NO;
+                                                 }
+                                               numberOfTap:10]];
     });
     return list;
 }
 
 + (instancetype) levelMangerWithActionStart:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) actionStart
                                   endAction:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) actionEnd
-                                  nextLevel:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) actionNextLevel{
+                                  nextLevel:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) actionNextLevel
+                                numberOfTap:(NSInteger)numberOfTap{
     BBLevelManger* levelManager = [self new];
     levelManager.actionStart = actionStart;
     levelManager.actionEnd = actionEnd;
     levelManager.actionNextLevel = actionNextLevel;
+    levelManager.numberOfTap = numberOfTap;
     return levelManager;
 }
 
@@ -52,6 +65,7 @@
 }
 
 - (void)startLevel:(BBBombManager *)bomManager {
+    self.currentTap = self.numberOfTap;
     if (self.actionStart) {
         self.actionStart(bomManager,self.delegate);
     }

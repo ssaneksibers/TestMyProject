@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class BBLevelManger;
+
 @interface BBGameViewController : UIViewController
 
+@property (nonatomic,strong) BBLevelManger* levelManager;
 
 @end
 
