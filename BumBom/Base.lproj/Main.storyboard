@@ -1,10 +1,99 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z9F-I4-BSd">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Curcle Menu View Controller-->
+        <scene sceneID="1Tg-NB-Ud2">
+            <objects>
+                <viewController id="cpj-UT-6fo" customClass="BBCurcleMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N2s-Sk-2Zf"/>
+                        <viewControllerLayoutGuide type="bottom" id="mrk-hd-wpg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N5z-eh-sB6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMy-RV-Qqx" customClass="BBMenuCollectionView">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonRadius">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonRadiusDelta">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="allRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="allRadiusDelta">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVertical" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTextColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfBombs">
+                                        <integer key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KMy-RV-Qqx" firstAttribute="top" secondItem="N5z-eh-sB6" secondAttribute="topMargin" id="P26-LZ-ECN"/>
+                            <constraint firstAttribute="trailing" secondItem="KMy-RV-Qqx" secondAttribute="trailing" id="UfF-oO-f01"/>
+                            <constraint firstItem="KMy-RV-Qqx" firstAttribute="leading" secondItem="N5z-eh-sB6" secondAttribute="leading" id="WKs-FQ-L5Y"/>
+                            <constraint firstItem="mrk-hd-wpg" firstAttribute="top" secondItem="KMy-RV-Qqx" secondAttribute="bottom" id="bz9-dP-JP4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="KMy-RV-Qqx" id="akk-pQ-bKb"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="kBBCurcleMenuViewControllerShowGameSegueIdentifier" customClass="BBNavigationViewControllerSegue" id="9Nh-Wc-b1s"/>
+                        <segue destination="EfX-Ph-0Uk" kind="custom" identifier="kBBCurcleMenuViewControllerShowLevelSegueIdentifier" customClass="BBNavigationViewControllerSegue" id="jN1-7c-h8T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5B6-Tr-zUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="1254"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Fke-8Y-GVf">
+            <objects>
+                <viewController id="Z9F-I4-BSd" customClass="BBViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QY6-oe-det"/>
+                        <viewControllerLayoutGuide type="bottom" id="xqc-jy-QeB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aKN-bq-y8R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <segue destination="cpj-UT-6fo" kind="custom" identifier="kBBNavigationViewController" customClass="BBNavigationViewControllerSegue" id="4il-Kh-rFV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keY-pk-Top" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-714" y="267"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -14,14 +103,40 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSV-U9-uyY">
+                                <frame key="frameInset" minY="20" width="600" height="20.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="miw-iI-4tq">
+                                <frame key="frameInset" minY="40.5" width="600" height="559.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eSV-U9-uyY" secondAttribute="trailing" id="0dl-PW-uZN"/>
+                            <constraint firstItem="miw-iI-4tq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="94c-nh-NAQ"/>
+                            <constraint firstItem="eSV-U9-uyY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QdN-nc-RQo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="miw-iI-4tq" secondAttribute="bottom" id="Ys5-Tk-51Q"/>
+                            <constraint firstItem="miw-iI-4tq" firstAttribute="top" secondItem="eSV-U9-uyY" secondAttribute="bottom" id="ckx-74-fK1"/>
+                            <constraint firstItem="eSV-U9-uyY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="clW-2a-xFx"/>
+                            <constraint firstAttribute="trailing" secondItem="miw-iI-4tq" secondAttribute="trailing" id="epI-g6-F0o"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="rvr-ZA-7A8" appends="YES" id="DTd-Kp-fAE"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="miw-iI-4tq" id="MhX-4t-cKg"/>
+                        <outlet property="tapCountLabel" destination="eSV-U9-uyY" id="Snd-eg-Z4i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="rvr-ZA-7A8">
@@ -30,6 +145,91 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="366" y="703"/>
+        </scene>
+        <!--Level View Controller-->
+        <scene sceneID="NzA-Xk-a1r">
+            <objects>
+                <viewController id="EfX-Ph-0Uk" customClass="BBLevelViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y8X-rJ-fhN"/>
+                        <viewControllerLayoutGuide type="bottom" id="69G-ih-fir"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mmh-tP-KMc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wIT-BJ-gcj" customClass="BBMenuCollectionView">
+                                <frame key="frameInset" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonRadius">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonRadiusDelta">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="allRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="allRadiusDelta">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVertical" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTextColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfBombs">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPb-TZ-50w">
+                                <frame key="frameInset" minX="40" minY="20" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Oa8-L0-eFg"/>
+                                    <constraint firstAttribute="width" constant="40" id="zuz-1F-xua"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="MENU">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedButtonBack:" destination="EfX-Ph-0Uk" eventType="touchUpInside" id="nBd-8d-yUT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wIT-BJ-gcj" secondAttribute="trailing" id="1Eq-4t-UYP"/>
+                            <constraint firstItem="69G-ih-fir" firstAttribute="top" secondItem="wIT-BJ-gcj" secondAttribute="bottom" id="5tA-NP-qNG"/>
+                            <constraint firstItem="LPb-TZ-50w" firstAttribute="top" secondItem="y8X-rJ-fhN" secondAttribute="bottom" id="MnR-Ee-io4"/>
+                            <constraint firstItem="wIT-BJ-gcj" firstAttribute="leading" secondItem="Mmh-tP-KMc" secondAttribute="leading" id="eWS-nS-zl8"/>
+                            <constraint firstItem="LPb-TZ-50w" firstAttribute="leading" secondItem="Mmh-tP-KMc" secondAttribute="leadingMargin" constant="20" id="sWK-YS-oR9"/>
+                            <constraint firstItem="wIT-BJ-gcj" firstAttribute="top" secondItem="Mmh-tP-KMc" secondAttribute="topMargin" id="w74-8s-sdv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="wIT-BJ-gcj" id="JBY-zv-zzQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iou-cb-o9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="1570"/>
         </scene>
     </scenes>
 </document>

@@ -27,6 +27,8 @@ typedef enum {
 
 @interface BBLevelManger : NSObject
 
++ (NSInteger) numberOfOpenLevel;
++ (void) openNextLevel;
 + (NSArray<BBLevelManger*>*) levels;
 
 + (instancetype) levelMangerWithActionStart:(BOOL (^)(BBBombManager* bomb,id<BBLevelMangerDelegate> delegate)) actionStart

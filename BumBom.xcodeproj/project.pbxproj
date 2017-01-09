@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80263381C468D5B000CB3AD /* UILabel(CornerRadius).m in Sources */ = {isa = PBXBuildFile; fileRef = E80263371C468D5B000CB3AD /* UILabel(CornerRadius).m */; };
+		E802633C1C468F38000CB3AD /* BBMenuCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E802633B1C468F38000CB3AD /* BBMenuCollectionView.m */; };
+		E802633F1C46AFF8000CB3AD /* UIView(HRConstraint).m in Sources */ = {isa = PBXBuildFile; fileRef = E802633E1C46AFF8000CB3AD /* UIView(HRConstraint).m */; };
+		E80263461C46B9E8000CB3AD /* BBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E80263451C46B9E8000CB3AD /* BBViewController.m */; };
+		E80263491C46C4EF000CB3AD /* BBNavigationViewControllerSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = E80263481C46C4EF000CB3AD /* BBNavigationViewControllerSegue.m */; };
+		E802634C1C46CD73000CB3AD /* BBLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E802634B1C46CD73000CB3AD /* BBLevelViewController.m */; };
+		E8618AEB1DA5170B006E72FD /* YPAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8618AE81DA5170B006E72FD /* YPAnimation.m */; };
+		E8618AEC1DA5170B006E72FD /* YPProgressAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8618AEA1DA5170B006E72FD /* YPProgressAnimation.m */; };
 		E8D88C961C323B55001E6FF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D88C951C323B55001E6FF8 /* main.m */; };
 		E8D88C991C323B55001E6FF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D88C981C323B55001E6FF8 /* AppDelegate.m */; };
 		E8D88C9C1C323B55001E6FF8 /* BBGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D88C9B1C323B55001E6FF8 /* BBGameViewController.m */; };
@@ -16,6 +24,7 @@
 		E8D88CAF1C323B55001E6FF8 /* BumBomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D88CAE1C323B55001E6FF8 /* BumBomTests.m */; };
 		E8D88CBC1C323BD7001E6FF8 /* BBBombManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D88CBB1C323BD7001E6FF8 /* BBBombManager.m */; };
 		E8D88CBF1C325C39001E6FF8 /* BBLevelManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D88CBE1C325C39001E6FF8 /* BBLevelManger.m */; };
+		E8EF47C21C43E56F00A0984B /* BBCurcleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EF47C11C43E56F00A0984B /* BBCurcleMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +38,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E80263361C468D5B000CB3AD /* UILabel(CornerRadius).h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel(CornerRadius).h"; sourceTree = "<group>"; };
+		E80263371C468D5B000CB3AD /* UILabel(CornerRadius).m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel(CornerRadius).m"; sourceTree = "<group>"; };
+		E802633A1C468F38000CB3AD /* BBMenuCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMenuCollectionView.h; sourceTree = "<group>"; };
+		E802633B1C468F38000CB3AD /* BBMenuCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMenuCollectionView.m; sourceTree = "<group>"; };
+		E802633D1C46AFF8000CB3AD /* UIView(HRConstraint).h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView(HRConstraint).h"; sourceTree = "<group>"; };
+		E802633E1C46AFF8000CB3AD /* UIView(HRConstraint).m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView(HRConstraint).m"; sourceTree = "<group>"; };
+		E80263401C46B7CD000CB3AD /* HRAssertDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRAssertDefine.h; sourceTree = "<group>"; };
+		E80263411C46B7CD000CB3AD /* HRCodingSupprotDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRCodingSupprotDefine.h; sourceTree = "<group>"; };
+		E80263421C46B7CD000CB3AD /* HRKeyDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRKeyDefine.h; sourceTree = "<group>"; };
+		E80263441C46B9E8000CB3AD /* BBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBViewController.h; sourceTree = "<group>"; };
+		E80263451C46B9E8000CB3AD /* BBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBViewController.m; sourceTree = "<group>"; };
+		E80263471C46C4EF000CB3AD /* BBNavigationViewControllerSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBNavigationViewControllerSegue.h; sourceTree = "<group>"; };
+		E80263481C46C4EF000CB3AD /* BBNavigationViewControllerSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBNavigationViewControllerSegue.m; sourceTree = "<group>"; };
+		E802634A1C46CD73000CB3AD /* BBLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBLevelViewController.h; sourceTree = "<group>"; };
+		E802634B1C46CD73000CB3AD /* BBLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBLevelViewController.m; sourceTree = "<group>"; };
+		E8618AE71DA5170B006E72FD /* YPAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPAnimation.h; sourceTree = "<group>"; };
+		E8618AE81DA5170B006E72FD /* YPAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPAnimation.m; sourceTree = "<group>"; };
+		E8618AE91DA5170B006E72FD /* YPProgressAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPProgressAnimation.h; sourceTree = "<group>"; };
+		E8618AEA1DA5170B006E72FD /* YPProgressAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPProgressAnimation.m; sourceTree = "<group>"; };
 		E8D88C911C323B55001E6FF8 /* BumBom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BumBom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D88C951C323B55001E6FF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8D88C971C323B55001E6FF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,6 +74,8 @@
 		E8D88CBB1C323BD7001E6FF8 /* BBBombManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBombManager.m; sourceTree = "<group>"; };
 		E8D88CBD1C325C39001E6FF8 /* BBLevelManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBLevelManger.h; sourceTree = "<group>"; };
 		E8D88CBE1C325C39001E6FF8 /* BBLevelManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBLevelManger.m; sourceTree = "<group>"; };
+		E8EF47C01C43E56F00A0984B /* BBCurcleMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCurcleMenuViewController.h; sourceTree = "<group>"; };
+		E8EF47C11C43E56F00A0984B /* BBCurcleMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCurcleMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +96,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E80263351C468D25000CB3AD /* CornerRadius */ = {
+			isa = PBXGroup;
+			children = (
+				E80263361C468D5B000CB3AD /* UILabel(CornerRadius).h */,
+				E80263371C468D5B000CB3AD /* UILabel(CornerRadius).m */,
+			);
+			name = CornerRadius;
+			sourceTree = "<group>";
+		};
+		E80263391C468EF2000CB3AD /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				E80263401C46B7CD000CB3AD /* HRAssertDefine.h */,
+				E80263411C46B7CD000CB3AD /* HRCodingSupprotDefine.h */,
+				E80263421C46B7CD000CB3AD /* HRKeyDefine.h */,
+				E802633D1C46AFF8000CB3AD /* UIView(HRConstraint).h */,
+				E802633E1C46AFF8000CB3AD /* UIView(HRConstraint).m */,
+				E802633A1C468F38000CB3AD /* BBMenuCollectionView.h */,
+				E802633B1C468F38000CB3AD /* BBMenuCollectionView.m */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		E80263431C46B954000CB3AD /* BBNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				E8618AE71DA5170B006E72FD /* YPAnimation.h */,
+				E8618AE81DA5170B006E72FD /* YPAnimation.m */,
+				E8618AE91DA5170B006E72FD /* YPProgressAnimation.h */,
+				E8618AEA1DA5170B006E72FD /* YPProgressAnimation.m */,
+				E80263441C46B9E8000CB3AD /* BBViewController.h */,
+				E80263451C46B9E8000CB3AD /* BBViewController.m */,
+				E80263471C46C4EF000CB3AD /* BBNavigationViewControllerSegue.h */,
+				E80263481C46C4EF000CB3AD /* BBNavigationViewControllerSegue.m */,
+			);
+			name = BBNavigation;
+			sourceTree = "<group>";
+		};
 		E8D88C881C323B55001E6FF8 = {
 			isa = PBXGroup;
 			children = (
@@ -87,11 +155,18 @@
 		E8D88C931C323B55001E6FF8 /* BumBom */ = {
 			isa = PBXGroup;
 			children = (
+				E80263431C46B954000CB3AD /* BBNavigation */,
+				E80263391C468EF2000CB3AD /* Collection */,
+				E80263351C468D25000CB3AD /* CornerRadius */,
 				E8D88CB91C323BB3001E6FF8 /* Model */,
 				E8D88C971C323B55001E6FF8 /* AppDelegate.h */,
 				E8D88C981C323B55001E6FF8 /* AppDelegate.m */,
 				E8D88C9A1C323B55001E6FF8 /* BBGameViewController.h */,
 				E8D88C9B1C323B55001E6FF8 /* BBGameViewController.m */,
+				E8EF47C01C43E56F00A0984B /* BBCurcleMenuViewController.h */,
+				E8EF47C11C43E56F00A0984B /* BBCurcleMenuViewController.m */,
+				E802634A1C46CD73000CB3AD /* BBLevelViewController.h */,
+				E802634B1C46CD73000CB3AD /* BBLevelViewController.m */,
 				E8D88C9D1C323B55001E6FF8 /* Main.storyboard */,
 				E8D88CA01C323B55001E6FF8 /* Assets.xcassets */,
 				E8D88CA21C323B55001E6FF8 /* LaunchScreen.storyboard */,
@@ -179,6 +254,7 @@
 				TargetAttributes = {
 					E8D88C901C323B55001E6FF8 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SUAWT97CSE;
 					};
 					E8D88CA91C323B55001E6FF8 = {
 						CreatedOnToolsVersion = 7.2;
@@ -231,10 +307,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D88C9C1C323B55001E6FF8 /* BBGameViewController.m in Sources */,
+				E80263381C468D5B000CB3AD /* UILabel(CornerRadius).m in Sources */,
+				E8618AEC1DA5170B006E72FD /* YPProgressAnimation.m in Sources */,
+				E80263461C46B9E8000CB3AD /* BBViewController.m in Sources */,
+				E80263491C46C4EF000CB3AD /* BBNavigationViewControllerSegue.m in Sources */,
+				E8618AEB1DA5170B006E72FD /* YPAnimation.m in Sources */,
 				E8D88CBC1C323BD7001E6FF8 /* BBBombManager.m in Sources */,
+				E802634C1C46CD73000CB3AD /* BBLevelViewController.m in Sources */,
+				E802633C1C468F38000CB3AD /* BBMenuCollectionView.m in Sources */,
 				E8D88C991C323B55001E6FF8 /* AppDelegate.m in Sources */,
+				E802633F1C46AFF8000CB3AD /* UIView(HRConstraint).m in Sources */,
 				E8D88C961C323B55001E6FF8 /* main.m in Sources */,
 				E8D88CBF1C325C39001E6FF8 /* BBLevelManger.m in Sources */,
+				E8EF47C21C43E56F00A0984B /* BBCurcleMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,10 +447,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Andrey Chashkov (U4RY46T73D)";
+				DEVELOPMENT_TEAM = SUAWT97CSE;
 				INFOPLIST_FILE = BumBom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alexander.shipin.BumBom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1b8ee059-2556-45c6-980f-2a2c39c53540";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -373,10 +463,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SUAWT97CSE;
 				INFOPLIST_FILE = BumBom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alexander.shipin.BumBom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -423,6 +516,7 @@
 				E8D88CB51C323B55001E6FF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8D88CB61C323B55001E6FF8 /* Build configuration list for PBXNativeTarget "BumBomTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +525,7 @@
 				E8D88CB81C323B55001E6FF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

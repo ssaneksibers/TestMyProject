@@ -8,6 +8,7 @@
 
 #import "BBBombManager.h"
 
+
 @interface BBBombManager ()
 
 @property (nonatomic,assign) BBBomb* bombs;
@@ -30,6 +31,7 @@
 }
 
 - (void)dealloc {
+    
     if (self.bombs) {
         free(self.bombs);
     }
@@ -43,8 +45,8 @@
     _resultDictionary = [NSMutableDictionary new];
     self.bombs = malloc( sizeof(BBBomb) * numberOfBombs);
     for (int i = 0; i < numberOfBombs; i++) {
-        self.bombs[i].position = CGPointMake((float)(rand() % (int)self.area.x),
-                                             (float)(rand() % (int)self.area.y));
+        self.bombs[i].position = CGPointMake((float)(rand() % (int)(self.area.x - self.minRadius * 2.)) + self.minRadius,
+                                             (float)(rand() % (int)(self.area.y - self.minRadius * 2.)) + self.minRadius);
         
         self.bombs[i].velocitu = CGPointMake(((float)(rand() % (int)self.area.x) / self.area.x  - 0.5) * self.deltaVel,
                                              ((float)(rand() % (int)self.area.y) / self.area.y  - 0.5) * self.deltaVel);
@@ -64,8 +66,8 @@
     }
     self.bombs = malloc( sizeof(BBBomb) * (numberOfBombs + numberTwo + numberOne));
     for (int i = 0; i < numberOfBombs + numberTwo + numberOne; i++) {
-        self.bombs[i].position = CGPointMake((float)(rand() % (int)self.area.x),
-                                             (float)(rand() % (int)self.area.y));
+        self.bombs[i].position = CGPointMake((float)(rand() % (int)(self.area.x - self.minRadius * 2.)) + self.minRadius,
+                                             (float)(rand() % (int)(self.area.y - self.minRadius * 2.)) + self.minRadius);
         
         self.bombs[i].velocitu = CGPointMake(((float)(rand() % (int)self.area.x) / self.area.x  - 0.5) * self.deltaVel,
                                              ((float)(rand() % (int)self.area.y) / self.area.y  - 0.5) * self.deltaVel);
@@ -108,8 +110,8 @@
                             (self.bombs[i].position.y - self.bombs[j].position.y) *
                             (self.bombs[i].position.y - self.bombs[j].position.y);
                             
-                            if (length < self.bombs[i].curentRadius * self.bombs[i].curentRadius +
-                                self.bombs[j].curentRadius * self.bombs[j].curentRadius) {
+                            if (length < (self.bombs[i].curentRadius + self.bombs[i].curentRadius) *
+                                (self.bombs[i].curentRadius + self.bombs[i].curentRadius)) {
                                 [self activBombAtIndex:j];
                             }
                         }
@@ -119,10 +121,12 @@
         } else {
             self.bombs[i].position.x += self.bombs[i].velocitu.x;
             self.bombs[i].position.y += self.bombs[i].velocitu.y;
-            if (self.bombs[i].position.x < 0 || self.bombs[i].position.x > self.area.x) {
+            if (self.bombs[i].position.x < self.minRadius ||
+                self.bombs[i].position.x + self.minRadius > self.area.x) {
                 self.bombs[i].velocitu.x = -self.bombs[i].velocitu.x;
             }
-            if (self.bombs[i].position.y < 0 || self.bombs[i].position.y > self.area.y) {
+            if (self.bombs[i].position.y < self.minRadius ||
+                self.bombs[i].position.y + self.minRadius> self.area.y) {
                 self.bombs[i].velocitu.y = -self.bombs[i].velocitu.y;
             }
         }

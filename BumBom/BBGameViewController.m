@@ -9,6 +9,7 @@
 #import "BBGameViewController.h"
 #import "BBBombManager.h"
 #import "BBLevelManger.h"
+#import "BBViewController.h"
 
 @interface BBGameViewController ()<BBLevelMangerDelegate>
 
@@ -21,6 +22,10 @@
 @property (nonatomic,strong) NSValue* lastTapPoint;
 
 @property (nonatomic,assign) NSInteger numberOfPoints;
+
+@property (nonatomic,strong) IBOutlet UILabel* tapCountLabel;
+@property (nonatomic,strong) IBOutlet UIView* containerView;
+@property (nonatomic,strong) NSTimer* timer;
 
 @end
 
@@ -36,27 +41,45 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    if (!self.levelManager) {
+#warning demo code
+        self.levelManager = [BBLevelManger levels][0];
+    }
     [self reloadData];
+    
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                         self.view.backgroundColor = [UIColor whiteColor];
+                     }];
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                         self.view.backgroundColor = [UIColor clearColor];
+                     }];
+    [self stop];
+}
+
+- (void) updateLabel{
+    self.tapCountLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%d", @""),self.levelManager.currentTap];
 }
 
 - (void) reloadData{
-    if (self.levelManager) {
-#warning demo code
-        _levelManager = [BBLevelManger levels][0];
-    }
     self.bombManager = [[BBBombManager alloc] initWithArea:CGPointMake(self.view.frame.size.width,
                                                                        self.view.frame.size.height)];
-    self.bombManager.maxRadius = 40;
-    self.bombManager.minRadius = 20;
+    self.bombManager.maxRadius = self.view.frame.size.width / 10.;
+    self.bombManager.minRadius = self.view.frame.size.width / 10. / 2.;
     self.bombManager.timeRadius = 1;
+    
+    
     
     [self.levelManager startLevel:self.bombManager];
     
-    [NSTimer scheduledTimerWithTimeInterval:1./30.
-                                     target:self
-                                   selector:@selector(updateImages)
-                                   userInfo:nil
-                                    repeats:YES];
+    [self updateLabel];
+    
+    [self start];
 }
 
 
@@ -80,7 +103,7 @@
             imageView = [UIImageView new];
             imageView.userInteractionEnabled = YES;
             [self.subImageViews addObject:imageView];
-            [self.view addSubview:imageView];
+            [self.containerView addSubview:imageView];
         }
         imageView.frame = CGRectMake(point.x - size,
                                      point.y - size,
@@ -90,7 +113,7 @@
         if ([self.bombManager bombsAtIndex:i]->isActivState) {
             imageView.image = self.activBombImage;
             isActiv = YES;
-            imageView.backgroundColor = [UIColor redColor];
+            imageView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
         } else {
             if (self.lastTapPoint) {
                 if ((point.x - tapPoint.x)*(point.x - tapPoint.x) +
@@ -101,11 +124,11 @@
             imageView.image = self.bombImage;
             NSInteger type = [self.bombManager bombsAtIndex:i]->type;
             if (type == 0) {
-                imageView.backgroundColor = [UIColor blackColor];
+                imageView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
             } else if (type == 1) {
-                imageView.backgroundColor = [UIColor blueColor];
+                imageView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
             } else {
-                imageView.backgroundColor = [UIColor greenColor];
+                imageView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.5];
             }
         }
     }
@@ -134,8 +157,9 @@
     if (self.levelManager.currentTap) {
         self.isNeedUpdate = YES;
         self.levelManager.currentTap--;
-        self.lastTapPoint = [NSValue valueWithCGPoint:[tap locationInView:self.view]];
+        self.lastTapPoint = [NSValue valueWithCGPoint:[tap locationInView:self.containerView]];
     }
+    [self updateLabel];
 }
 
 #pragma mark - BBLevelMangerDelegate
@@ -163,7 +187,7 @@
         [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"back in menu", @"")
                                                   style:(UIAlertActionStyleDefault)
                                                 handler:^(UIAlertAction * _Nonnull action) {
-                                                    [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+                                                    [weakSelf.bbNavigationViewController popViewController];
                                                 }]];
     }
     if (type == BBLevelMangerMessageTypeStartLevel) {
@@ -177,6 +201,19 @@
     [self presentViewController:alert
                        animated:YES
                      completion:nil];
+}
+
+- (void) start{
+    [self stop];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1./30.
+                                                  target:self
+                                                selector:@selector(updateImages)
+                                                userInfo:nil
+                                                 repeats:YES];
+}
+
+- (void) stop {
+    [self.timer invalidate];
 }
 
 @end
